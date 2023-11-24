@@ -67,7 +67,10 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "https://diplomadobd-06369030a7e4.herokuapp.com/",
+    # Agrega aquí otros dominios permitidos si es necesario
+]
 
 
 ROOT_URLCONF = 'distritiendamj.urls'
