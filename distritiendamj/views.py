@@ -6,7 +6,7 @@ import os
 
 def product_image_view(request, image_name):
     # Construct the full path to the image file
-    image_path = os.path.join(settings.MEDIA_ROOT + "/", image_name)
+    image_path = os.path.join(settings.MEDIA_ROOT + "/productos", image_name)
     print(image_path) 
     # Check if the file exists
     if os.path.exists(image_path):
