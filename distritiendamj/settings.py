@@ -52,7 +52,8 @@ INSTALLED_APPS = [
     'pagos',
     'carteras',
     'factura_v_carteras',
-    'corsheaders'
+    'corsheaders',
+    'rest_framework_simplejwt'
 ]
 
 MIDDLEWARE = [
@@ -106,11 +107,11 @@ DATABASES = {
   }
 }
 
-"""REST_FRAMEWORK = {
+REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (        
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )    
-}"""
+}
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -170,3 +171,6 @@ os.makedirs(STATIC_ROOT, exist_ok=True)
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
+SIMPLE_JWT = {
+    'AUTH_HEADER_TYPES': ('Bearer',),
+}
