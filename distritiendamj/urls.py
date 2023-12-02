@@ -23,6 +23,11 @@ from factura_v_carteras.api.router import route_f_v_carteras
 from django.conf import settings
 from django.conf.urls.static import static
 
+"""generador de token"""
+from django.urls import path
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+
+
 from . import views
 
 
@@ -60,5 +65,9 @@ urlpatterns = [
    path('',include(route_dventa.urls)),
    path('',include(route_pago.urls)),
    path('',include(route_cartera.urls)),
-   path('',include(route_f_v_carteras.urls))
+   path('',include(route_f_v_carteras.urls)),
+   path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+   path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+   
+   
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
